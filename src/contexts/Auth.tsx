@@ -30,8 +30,9 @@ interface AuthProviderProps {
 
 type AuthorizationResponse = AuthSession.AuthSessionResult & {
   params: {
-    access_token: string;
+    access_token?: string;
     token_type: string;
+    error?: string;
   };
 };
 
@@ -50,7 +51,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         authUrl,
       })) as AuthorizationResponse;
 
-      if (type === 'success') {
+      if (type !== 'success' && !params.error) {
         api.defaults.headers.authorization = `${params.token_type} ${params.access_token}`;
 
         const userInfo = await api.get('/users/@me');

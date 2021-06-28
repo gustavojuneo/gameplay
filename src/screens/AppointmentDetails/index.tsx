@@ -70,7 +70,7 @@ export function AppointmentDetails() {
         style={styles.members}
         keyExtractor={item => item.id}
         renderItem={({ item }) => <Member data={item} />}
-        ItemSeparatorComponent={() => <ListDivider />}
+        ItemSeparatorComponent={() => <ListDivider isCentered />}
       />
 
       <View style={styles.footer}>
