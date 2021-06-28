@@ -13,6 +13,7 @@ import AppLoading from 'expo-app-loading';
 
 import { Background } from './src/components/Background';
 import { Routes } from './src/routes';
+import { AuthProvider } from './src/contexts/Auth';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -30,7 +31,9 @@ export default function App() {
     <Background>
       <StatusBar style="light" translucent />
 
-      <Routes />
+      <AuthProvider>
+        <Routes />
+      </AuthProvider>
     </Background>
   );
 }

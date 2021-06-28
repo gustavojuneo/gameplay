@@ -5,6 +5,6 @@ import { styles } from './styles';
 
 export function GuildIcon() {
   const uri =
-    'https://www.freepnglogos.com/uploads/discord-logo-png/discord-logo-logodownload-download-logotipos-1.png';
+    'https://static.wikia.nocookie.net/leagueoflegends/images/f/f2/League%2B.png/revision/latest?cb=20210516152058';
   return <Image source={{ uri }} style={styles.image} resizeMode="cover" />;
 }

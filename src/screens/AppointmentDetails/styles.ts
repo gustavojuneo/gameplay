@@ -6,7 +6,6 @@ export const styles = StyleSheet.create({
   banner: {
     width: '100%',
     height: 234,
-    marginBottom: 30,
   },
   bannerContent: {
     flex: 1,
@@ -28,7 +27,6 @@ export const styles = StyleSheet.create({
   },
   members: {
     paddingHorizontal: 24,
-    marginTop: 24,
   },
   footer: {
     paddingHorizontal: 24,
