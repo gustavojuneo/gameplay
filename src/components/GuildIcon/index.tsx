@@ -1,10 +1,27 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { View, Image } from 'react-native';
 
 import { styles } from './styles';
 
-export function GuildIcon() {
-  const uri =
-    'https://static.wikia.nocookie.net/leagueoflegends/images/f/f2/League%2B.png/revision/latest?cb=20210516152058';
-  return <Image source={{ uri }} style={styles.image} resizeMode="cover" />;
+import DiscordSvg from '../../assets/discord.svg';
+
+const { CDN_IMAGE } = process.env;
+
+interface GuildIconProps {
+  guildId: string;
+  iconId?: string | null;
+}
+
+export function GuildIcon({ guildId, iconId }: GuildIconProps) {
+  const uri = `${CDN_IMAGE}/icons/${guildId}/${iconId}.png`;
+
+  return (
+    <View style={styles.container}>
+      {iconId ? (
+        <Image source={{ uri }} style={styles.image} resizeMode="cover" />
+      ) : (
+        <DiscordSvg width={40} height={40} />
+      )}
+    </View>
+  );
 }
